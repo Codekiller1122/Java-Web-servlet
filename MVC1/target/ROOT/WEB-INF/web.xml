@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>MVC1</display-name>
+  <context-param>
+    <param-name>jdbc.driver</param-name>
+    <param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>jdbc.url</param-name>
+    <param-value>jdbc:mysql://localhost:8080/userdao</param-value>
+  </context-param>
+  <context-param>
+    <param-name>jdbc.username</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>jdbc.password</param-name>
+    <param-value>admin</param-value>
+  </context-param>
+  
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>FrontController</display-name>
+    <servlet-name>FrontController</servlet-name>
+    <servlet-class>pk.edu.zab.controller.FrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrontController</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserController</display-name>
+    <servlet-name>UserController</servlet-name>
+    <servlet-class>pk.edu.zab.controller.UserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserController</servlet-name>
+    <url-pattern>/UserController</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>PermissionsFilter</display-name>
+    <filter-name>PermissionsFilter</filter-name>
+    <filter-class>pk.edu.zab.filter.PermissionsFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PermissionsFilter</filter-name>
+    <url-pattern>/WEB-INF/jsps/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HomeController</display-name>
+    <servlet-name>HomeController</servlet-name>
+    <servlet-class>pk.edu.zab.controller.HomeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeController</servlet-name>
+    <url-pattern>/HomeController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HomeAsyncServlet</display-name>
+    <servlet-name>HomeAsyncServlet</servlet-name>
+    <servlet-class>pk.edu.zab.controller.HomeAsyncServlet</servlet-class>
+    <async-supported>true</async-supported>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeAsyncServlet</servlet-name>
+    <url-pattern>/HomeAsyncServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+</web-app>
