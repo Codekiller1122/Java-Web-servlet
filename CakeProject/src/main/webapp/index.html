@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Cake Project</title>
+</head>
+<body>
+	<h1>Welcome to the Cake Project!</h1>
+	<form method="POST" action="CakeServlet">
+		<label for="CakeName">Cake Name:</label>
+		<input type="text" id="CakeName" name="Cakename"><br><br>
+		<label for="CakePrice">Cake Price:</label>
+		<input type="text" id="CakePrice" name="Cakeprice"><br><br>
+		<input type="submit" value="Add Cake">
+	</form>
+	<br>
+	<form method="GET" action="CakeServlet">
+		<label for="SearchCake">Search Cake:</label>
+		<input type="text" id="SearchCake" name="CakeName"><br><br>
+		<input type="submit" value="Search">
+	</form>
+</body>
+</html>
